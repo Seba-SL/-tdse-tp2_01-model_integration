@@ -203,3 +203,63 @@ arm-none-eabi-size  tdse-tp2_01-model_integration.elf
   15584	    152	   2312	  18048	   4680	tdse-tp2_01-model_integration.elf
 Finished building: default.size.stdout
  
+15:44:44 **** Incremental Build of configuration Debug for project tdse-tp2_01-model_integration ****
+make -j4 all 
+arm-none-eabi-gcc "../app/src/task_sensor.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../app/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/src/task_sensor.d" -MT"app/src/task_sensor.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "app/src/task_sensor.o"
+../app/src/task_sensor.c:71:26: error: 'ST_BTN_XX_UP' undeclared here (not in a function); did you mean 'ST_BTN_01_UP'?
+   71 |         {DEL_BTN_XX_MIN, ST_BTN_XX_UP, EV_BTN_XX_UP}
+      |                          ^~~~~~~~~~~~
+      |                          ST_BTN_01_UP
+../app/src/task_sensor.c:71:40: error: 'EV_BTN_XX_UP' undeclared here (not in a function); did you mean 'EV_BTN_01_UP'?
+   71 |         {DEL_BTN_XX_MIN, ST_BTN_XX_UP, EV_BTN_XX_UP}
+      |                                        ^~~~~~~~~~~~
+      |                                        EV_BTN_01_UP
+../app/src/task_sensor.c: In function 'task_sensor_update':
+../app/src/task_sensor.c:181:95: error: 'TICK_MAX' undeclared (first use in this function)
+  181 |                                         if ((EV_BTN_01_DOWN == p_task_sensor_dta->event) && ( TICK_MAX == p_task_sensor_dta->tick)  )
+      |                                                                                               ^~~~~~~~
+../app/src/task_sensor.c:181:95: note: each undeclared identifier is reported only once for each function it appears in
+../app/src/task_sensor.c:151:18: warning: label 'https' defined but not used [-Wunused-label]
+  151 |                 }https://miro.com/welcomeonboard/c2VzRlNsNEVvalBhTnpDWklUTFhCd2daanBqbkZRRHJEWisrcXowVTZtck5KQjVxQTNsYU9JNzN5cEFGU1QxTm42dHpIemJHMUl4NVZnR3NncmlWUE9lZzBLUUNKaFpFSG1HSXh6ZmxTRE5tTEtoYi9rU0RKY3dZQks4dTBtQWhhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=780371918415
+      |                  ^~~~~
+make: *** [app/src/subdir.mk:37: app/src/task_sensor.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+15:47:47 **** Incremental Build of configuration Debug for project tdse-tp2_01-model_integration ****
+make -j4 all 
+arm-none-eabi-gcc "../app/src/task_sensor.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../app/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/src/task_sensor.d" -MT"app/src/task_sensor.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "app/src/task_sensor.o"
+../app/src/task_sensor.c: In function 'task_sensor_update':
+../app/src/task_sensor.c:153:18: warning: label 'https' defined but not used [-Wunused-label]
+  153 |                 }https://miro.com/welcomeonboard/c2VzRlNsNEVvalBhTnpDWklUTFhCd2daanBqbkZRRHJEWisrcXowVTZtck5KQjVxQTNsYU9JNzN5cEFGU1QxTm42dHpIemJHMUl4NVZnR3NncmlWUE9lZzBLUUNKaFpFSG1HSXh6ZmxTRE5tTEtoYi9rU0RKY3dZQks4dTBtQWhhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=780371918415
+      |                  ^~~~~
+arm-none-eabi-gcc -o "tdse-tp2_01-model_integration.elf" @"objects.list"  -lrdimon -mcpu=cortex-m3 -T"/home/sebastian/FIUBA-2do Cuatrimestre/Taller de Embebidos/TP2/tdse_workspace_tp2/tdse-tp2_01-model_integration/STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="tdse-tp2_01-model_integration.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: tdse-tp2_01-model_integration.elf
+ 
+arm-none-eabi-size  tdse-tp2_01-model_integration.elf 
+arm-none-eabi-objdump -h -S tdse-tp2_01-model_integration.elf  > "tdse-tp2_01-model_integration.list"
+   text	   data	    bss	    dec	    hex	filename
+  15652	    160	   2304	  18116	   46c4	tdse-tp2_01-model_integration.elf
+Finished building: default.size.stdout
+ 
+Finished building: tdse-tp2_01-model_integration.list
+ 
+15:49:02 **** Incremental Build of configuration Debug for project tdse-tp2_01-model_integration ****
+make -j4 all 
+arm-none-eabi-gcc "../app/src/task_sensor.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../app/inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"app/src/task_sensor.d" -MT"app/src/task_sensor.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "app/src/task_sensor.o"
+arm-none-eabi-gcc -o "tdse-tp2_01-model_integration.elf" @"objects.list"  -lrdimon -mcpu=cortex-m3 -T"/home/sebastian/FIUBA-2do Cuatrimestre/Taller de Embebidos/TP2/tdse_workspace_tp2/tdse-tp2_01-model_integration/STM32F103RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="tdse-tp2_01-model_integration.map" -Wl,--gc-sections -static -specs=rdimon.specs --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: tdse-tp2_01-model_integration.elf
+ 
+arm-none-eabi-size  tdse-tp2_01-model_integration.elf 
+arm-none-eabi-objdump -h -S tdse-tp2_01-model_integration.elf  > "tdse-tp2_01-model_integration.list"
+   text	   data	    bss	    dec	    hex	filename
+  15652	    160	   2304	  18116	   46c4	tdse-tp2_01-model_integration.elf
+Finished building: default.size.stdout
+ 
+Finished building: tdse-tp2_01-model_integration.list
+ 
+15:49:20 **** Incremental Build of configuration Debug for project tdse-tp2_01-model_integration ****
+make -j4 all 
+arm-none-eabi-size  tdse-tp2_01-model_integration.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15652	    160	   2304	  18116	   46c4	tdse-tp2_01-model_integration.elf
+Finished building: default.size.stdout
+ 

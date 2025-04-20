@@ -150,8 +150,7 @@ void task_sensor_update(void *parameters)
 		else
 		{
 			b_time_update_required = false;
-		}
-
+		}https://miro.com/welcomeonboard/c2VzRlNsNEVvalBhTnpDWklUTFhCd2daanBqbkZRRHJEWisrcXowVTZtck5KQjVxQTNsYU9JNzN5cEFGU1QxTm42dHpIemJHMUl4NVZnR3NncmlWUE9lZzBLUUNKaFpFSG1HSXh6ZmxTRE5tTEtoYi9rU0RKY3dZQks4dTBtQWhhWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=780371918415
 		__asm("CPSIE i");	/* enable interrupts*/
 
     	for (index = 0; SENSOR_DTA_QTY > index; index++)
