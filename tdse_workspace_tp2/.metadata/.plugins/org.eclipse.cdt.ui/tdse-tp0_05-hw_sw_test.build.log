@@ -1,0 +1,10 @@
+17:54:20 **** Build of configuration Debug for project tdse-tp0_05-hw_sw_test ****
+make -j4 all 
+arm-none-eabi-size  tdse-tp0_05-hw_sw_test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  14104	    132	   2260	  16496	   4070	tdse-tp0_05-hw_sw_test.elf
+Finished building: default.size.stdout
+ 
+
+17:54:21 Build Finished. 0 errors, 0 warnings. (took 1s.426ms)
+

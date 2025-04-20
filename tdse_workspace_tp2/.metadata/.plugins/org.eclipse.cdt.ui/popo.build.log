@@ -1,0 +1,10 @@
+20:07:55 **** Incremental Build of configuration Debug for project popo ****
+make -j4 all 
+arm-none-eabi-size  popo.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5536	     12	   1644	   7192	   1c18	popo.elf
+Finished building: default.size.stdout
+ 
+
+20:07:56 Build Finished. 0 errors, 0 warnings. (took 736ms)
+

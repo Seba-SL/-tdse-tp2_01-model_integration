@@ -1,0 +1,20 @@
+  app.c (app.h)
+   Endless loops, which execute tasks with fixed computing time. This 
+   sequential execution is only deviated from when an interrupt event occurs.
+
+...
+
+Analizar los fuentes de app.c y describir fuentes en app.txt (tipos de datos,
+estructuras de datos, arrays de estructuras de datos, métodos, etc)
+
+
+Tipos de Datos:
+
+   Estructuras : 
+    
+			 task_cfg_t con los campos : task_init() ,  task_update(),  parameters
+			 
+			 
+			 task_dta_t con el campo WCET , entero sin signo 
+			 
+			 
